@@ -4,6 +4,15 @@ This repo contains some examples of alternatives to the plugin package in Go's s
 
 ## Dynamic loading of Go plugins in a Go program via CGO
 
+- Run the demo via:
+
+
+```bash
+
+go build -o build/c-shared-plug.so -buildmode=c-shared ./plugins/c-shared-plug/main.go
+go run ./cmd/go-dlopen/
+```
+
 
 - Main program: https://github.com/e-nikolov/go-plugins/blob/main/cmd/go-dlopen/main.go
 
@@ -260,12 +269,4 @@ int LoadPlugin(go_str path) {
 
     return 0;
 }
-```
-
-Execute via
-
-```bash
-
-go build -o build/c-shared-plug.so -buildmode=c-shared ./plugins/c-shared-plug/main.go
-go run ./cmd/go-dlopen/
 ```
